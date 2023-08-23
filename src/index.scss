@@ -1,0 +1,262 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: darken(#e3e3e3, 20%);
+  //   background-color: #e3e3e3;
+
+  #root {
+    .App {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      header {
+        width: 100%;
+      }
+
+      .main-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        main {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
+.top-score {
+  border-color: #333;
+  background-color: darken(#8a2be2, 20%);
+
+  .name {
+    color: #fff;
+  }
+  .confidence {
+    color: #dfdfdf;
+    font-weight: bold !important;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+  background: blueviolet;
+  font-size: 27px;
+  padding: 5px 0;
+}
+
+.inputHolder {
+  margin: 15px 0;
+}
+
+.mainWrapper {
+  padding: 0 10px;
+}
+
+.mainContent {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.inputHolder {
+  padding: 0 10px;
+  display: flex;
+
+  input[type="text"] {
+    max-width: 400px;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 0;
+    display: inline-block;
+    border: 1px solid #222;
+    outline: none;
+  }
+
+  .uploadInput {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .or {
+    align-items: center;
+    display: inline-flex;
+    padding: 0 20px;
+  }
+
+  .uploadImage {
+    padding: 8px 16px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    display: inline-block;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.imageHolder {
+  width: 60%;
+  display: block;
+  flex: 0 0 60%;
+  max-width: 900px;
+  height: 70vmin;
+  border: 1px solid purple;
+  background-color: white;
+  box-shadow: 2px 2px 18px gray;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  //   &:empty {
+  //     display: none;
+  //   }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.resultsHolder {
+  padding: 30px;
+  border: 1px solid purple;
+  height: 42vh;
+  width: 30% !important;
+  margin-left: 1rem;
+  background-color: white;
+  box-shadow: 2px 2px 18px gray;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 0;
+  }
+
+  .result {
+    border: 1px solid #333;
+    margin: 0 0 10px;
+    padding: 10px;
+
+    // &:first-of-type {
+    //   border-color: #333;
+    //   background-color: #333;
+
+    //   .name {
+    //     color: #fff;
+    //   }
+    //   .confidence {
+    //     color: #dfdfdf;
+    //   }
+    // }
+
+    .name {
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .confidence {
+      display: block;
+      font-weight: 300;
+
+      .bestGuess {
+        background: #fff;
+        padding: 2px 6px;
+        color: #333;
+        margin-left: 3px;
+        border-radius: 45%;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.button {
+  padding: 12px 17px;
+  font-size: 18px;
+  background: blueviolet;
+  color: #fff;
+  display: inline-block;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.recentPredictions {
+  margin: 40px 0 0;
+  background: #dac2ff;
+  padding: 10px;
+
+  h2 {
+    color: #111;
+    font-size: 26px;
+    margin: 10px 0;
+  }
+
+  .recentImages {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .recentPrediction {
+    flex: 0 0 20%;
+    cursor: pointer;
+
+    @media (max-width: 1100px) {
+      flex: 0 0 25%;
+    }
+
+    @media (max-width: 870px) {
+      flex: 0 0 33.3%;
+    }
+
+    @media (max-width: 700px) {
+      flex: 0 0 50%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+
+      @media (max-width: 700px) {
+        height: 260px;
+      }
+    }
+  }
+}
